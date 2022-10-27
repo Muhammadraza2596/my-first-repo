@@ -5,188 +5,188 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ATM</title>
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .sectionOne {
+            display: flex;
+            background-color: antiquewhite;
+
+
+
+
+        }
+
+        .sectionOne>.left {
+            background-color: #5155DA;
+            height: 740px;
+            width: 350px;
+            color: white;
+
+
+        }
+
+        .sectionOne>.left>div {
+            margin: 50px;
+            font-family: 'Roboto', sans-serif;
+
+
+        }
+
+        .sectionOne>.left>.logos {
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+
+
+        .sectionOne>.left>img {
+            margin: 20%;
+            border-radius: 50%;
+
+
+        }
+
+        .sectionOne>.right {
+            width: 60%;
+            height: 100%;
+            overflow: auto;
+            padding: 20px;
+            font-size: 15px;
+
+        }
+    </style>
+
+
+
+
 </head>
 
-<style>
-    table {
-        font-family: arial, sans-serif;
-        border-collapse: collapse;
-        width: 100%;
-    }
 
-    td,
-    th {
-        border: 1px solid #868484;
-        text-align: left;
-        padding: 8px;
-    }
-
-    tr:nth-child(even) {
-        background-color: #969090;
-    }
-</style>
 
 <body>
 
-    <h1>ES6 Condition Checking if else</h1>
-    <hr>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element -->
 
-    <form onsubmit="checkPin(); return false">
-
-        <h3>ATM Machine</h3>
-
-        Enter Your Pin :
-        <input type="number" id="userInputPin" required>
-        <button>Confirm</button>
-
-    </form>
-
-    <h4 id="errorMessage"></h4>
-
-    <div id="homeScreen"></div>
-    <br>
-    <div id="withdrawamount"></div>
-    <br>
-    <div id="slip"></div>
+    <div class="sectionOne">
+        <div class="left">
+            <img src="./Profile.jpeg" width="200px" alt="profile photo">
+            <div>
+                <h2>Muhammad Raza</h2>
+                <h3>Assistant Production Manager</h3>
+            </div>
 
 
-    <script>
 
-        let moneyBox = 22000; // atm machine money box
-        let cardDailyLimit = 20000;
-        let accountBalance = 50000;
+            <div class="logos">
+                <i class="fa-brands fa-facebook fa-lg"></i>
+                <i class="fa-brands fa-twitter fa-lg"></i>
+                <i class="fa-brands fa-linkedin fa-lg"></i>
+                <i class="fa-brands fa-facebook-messenger fa-lg"></i>
 
-
-        function checkPin() {
-            console.log("i am checking pin ");
-
-            let userInputPin = document.querySelector("#userInputPin").value;
-
-            if (userInputPin.length < 4) {
-                document.querySelector("#errorMessage").innerHTML = 'You Must Enter 4 Digit Number';
-                return;
-
-            }
-
-            if (userInputPin.length > 4) {
-                document.querySelector("#errorMessage").innerHTML = 'You Must Enter 4 Digit Number';
-                return;
-            }
-
-            if (userInputPin === "1111") {
-
-                document.querySelector("#errorMessage").innerHTML = `Correct pin number ✅`;
-                document.querySelector("#homeScreen").innerHTML = `
-                <form onsubmit="withdraw(); return false">
-                    Enter your amount to withdraw:
-                    <input type="number" id="userInputAmount" required>
-                    <button>WithDraw</button>
-                </form>
-                `
-
-                return;
-            }
+            </div>
 
 
-            if (userInputPin !== "1111") {
-                document.querySelector("#errorMessage").innerHTML = `Incorrect pin number ❌`;
-                return;
-            }
 
-        }
+            <div class="list">
+                <ul>
+                    About Me
+                </ul>
 
+                <ul>
+                    Experience
+                </ul>
 
-        function withdraw() {
-            document.querySelector("#withdrawamount").innerHTML = ``;
+                <ul>
+                    Education
+                </ul>
+                <ul>
+                    Contact
+                </ul>
 
-            let amount = document.querySelector("#userInputAmount").value;
-
-
-            if (amount > moneyBox) {
-                
-                document.querySelector("#withdrawamount").innerHTML = `this machine dont have enough money, please try smaller amount ❌`;
-                document.querySelector("#slip").innerHTML = ``
-
-            }
-
-            // TODO:  complete this code
-
-            // also check invalid amount, amount should be multiple of 500
-            else if (amount < 500) {
-                document.querySelector("#withdrawamount").innerHTML = `Minimum amount should be 500 ❌`;
-                document.querySelector("#slip").innerHTML = ``
+            </div>
 
 
-            }
 
-            else if ((amount % 500) !== 0) {
+        </div>
 
-                document.querySelector("#withdrawamount").innerHTML = `ATM machine only have 500 and 1000 notes ❌`;
-                document.querySelector("#slip").innerHTML = ``
+        <div class="right">
+            <div class="obj">
+                <h2>OBJECTIVE</h2>
+                <p>
+                    To pursue a professional career in an organization that offers a competitive environment, demands
+                    excellence in performance
+                    and provides opportunities to attain professional growth based on individual merit, performance and
+                    capabilities.
+                </p>
 
-            }
+            </div>
 
-            else if ((amount % 500) === 0) {
+            <div class="rightBox">
+                <h2>EDUCATION</h2>
+                <div class="box-child">
+                    <h4>BS MECHATRONICS</h4>
+                    <p>Indus University</p>
+                </div>
+                <div class="box-child">
+                    <h4>H.S.C (Computer Science)</h4>
+                    <p>
+                        Karachi Board
+                    </p>
+                </div>
+                <div class="box-child">
+                    <h4>S.S.C (Science) </h4>
+                    <p>Karachi Secondary Board</p>
+                </div>
+            </div>
 
 
-                if (amount > cardDailyLimit) {
-                    document.querySelector("#withdrawamount").innerHTML = `Amount limit exceed ❌`;
-                    document.querySelector("#slip").innerHTML = ``
+            <div class="project rightBox">
+                <h2>Experience</h2>
+                <div class="pro-child">
+                    <ul>
+                        <li>Solvant Plant Monitoring</li>
+                        <li>Solvant Plant Operating</li>
+                        <li>Oil Testing in Lab</li>
+                        <li>Seeds Testing</li>
+                        <li>Quality Maintaiance</li>
+                        <li>PLC Operating</li>
+                        <li>Continue Plant Operating</li>
 
-                } 
-                
-                else {
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project rightBox">
+                <h2>Certification</h2>
+                <div class="pro-child">
+                    <ul>
+                        <li>Professional Industrial Automation ( PLC ) Course from
+                            Mindstorm Engineering Institute</li>
+                        <li>06 Months CADCAM Creo 2.0 Course from KTDMC in
+                            Collaboration with NAVTTC</li>
+                        <li>Python Core Development (Saylani Welfare Trust, 2019)</li>
+                    
 
 
-                    moneyBox -= amount;  // moneyBox = moneyBox - amount
-                    cardDailyLimit -= amount;
-                    accountBalance -= amount;
+                    </ul>
+                </div>
+            </div>
 
-                    document.querySelector("#slip").innerHTML = `
-                
-                <table>
-                    <tr>
-                        <th>Description</th>
-                        <th>Debit</th>
-                        <th>Credit</th>
-                        <th>Balance</th>
-                        
-                        </tr>
-                        <tr>
-                            <td id="description"></td>
-                            <td id="debit"></td>
-                            <td id="credit"></td>
-                            <td id="balance"></td>
-                            
-                            </tr>
-                            <tr>
-                                <td id="total">Total</td>
-                                <td></td>
-                        <td></td>
-                        <td id="totalAmount"></td>
-                        
-                        </tr>
-                        
-                        </table>
-                        `
-                    document.querySelector("#withdrawamount").innerHTML = `Successfully withdraw ✅`;
-                    document.querySelector("#description").innerHTML = "Withdraw Amount " + (new Date()).toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })
-                    document.querySelector("#debit").innerHTML = amount
-                    document.querySelector("#credit").innerHTML = 0
-                    document.querySelector("#balance").innerHTML = accountBalance
-                    document.querySelector("#totalAmount").innerHTML = amount
-
-                }
+        </div>
 
 
 
 
-            }
+    </div>
 
-        }
 
-    </script>
+
 
 </body>
 
